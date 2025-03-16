@@ -15,6 +15,32 @@
     console.log(student.getInfo());
 }
 {
+    //masala2
+    var BankAccount = /** @class */ (function () {
+        function BankAccount(balance) {
+            this.balance = 0;
+            this.balance = balance;
+        }
+        BankAccount.prototype.getBalance = function () {
+            return this.balance;
+        };
+        BankAccount.prototype.deposit = function (amount) {
+            this.balance += amount;
+        };
+        BankAccount.prototype.pay = function (amount) {
+            if (amount > this.balance) {
+                return "You do not have enough money for that mission";
+            }
+            this.balance -= amount;
+        };
+        return BankAccount;
+    }());
+    var owner = new BankAccount(0);
+    owner.deposit(100);
+    owner.pay(49);
+    console.log(owner.getBalance());
+}
+{
     //masala3
     var Circle = /** @class */ (function () {
         function Circle(p, radius) {
@@ -28,6 +54,24 @@
     }());
     var radius = new Circle(3.1416, 5);
     console.log(radius.getArea());
+}
+{
+    //masala4
+    var Product = /** @class */ (function () {
+        function Product(price) {
+            this.price = price;
+        }
+        Product.prototype.getBalance = function () {
+            return this.price;
+        };
+        Product.prototype.applayDiscount = function (percentage) {
+            this.price = this.price - (this.price * percentage / 100);
+        };
+        return Product;
+    }());
+    var owner = new Product(500);
+    owner.applayDiscount(20);
+    console.log(owner.getBalance());
 }
 {
     //masala5
